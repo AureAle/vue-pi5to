@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import { userInfo } from 'os';
 import Home from './views/Home.vue';
+import JavaApp from './views/JavaApp.vue';
+import Usuarios from './views/Usuarios.vue';
 
 Vue.use(Router);
 
@@ -18,6 +21,16 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+    },
+    {
+      path: '/javaApp',
+      name: 'javaApp',
+      component: JavaApp,
+    },
+    {
+      path: '/usuarios',
+      name: 'usuarios',
+      component: Usuarios,
     },
   ],
 });
