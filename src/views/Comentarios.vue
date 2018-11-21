@@ -1,29 +1,31 @@
 <template>
 <section>
     <form action="#" method="post">
+    <label for="name">Comenta:</label>
+    <textarea name="contenido" v-model="contenido" ></textarea>
+    <br>
     <label for="name">Número de cuenta:</label>
-    <input type="text" name="cuenta" v-model="cuenta" >
+    <input type="text" name="cuentaUsuario" v-model="cuentaUsuario" >
     <br>
-    <label for="name">Contraseña:</label>
-    <input type="password" name="password" v-model="password" >
-    <br>
-    <button type="submit" @click.prevent="sendData">Entrar</button>
+    <button type="submit" @click.prevent="sendData">Comentar</button>
     </form>
+    <br>
     <div v-if="success">
-        <p>Bienvenido</p>
+        <p>Tu comentario se ha subido</p>
         <router-link to="/">Home</router-link>
     </div>
+
 </section>
 </template>
 <script>
 import axios from "axios";
 
 export default {
-    name: "login",
+    name: "comentarios",
     data(){
         return{
-            cuenta:null,
-            password:null,
+            contenido:null,
+            cuentaUsuario:null,
             success: false,
             error: false
         };
@@ -33,19 +35,19 @@ export default {
             console.log("here");
             axios({
                 method: "POST",
-                url: "https://java-rest-server.herokuapp.com/login/",
+                url: "https://java-rest-server.herokuapp.com/comentarios/",
                 data:{
-                    cuenta: this.cuenta,
-                    password: this.password
+                    contenido: this.contenido,
+                    cuentaUsuario: this.cuentaUsuario
                 },
             headers: {"content-type": "application/json"}    
             }).then(
                 result =>{
                     if(result.data.id>0){
                         this.success=true;
-                        this.cuenta=null;
-                        this.password=null;
-                       
+                        this.contenido=null;
+                        this.cuentaUsuario=null;
+                        
                     }
                 },
                 error=> {

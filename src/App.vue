@@ -4,7 +4,12 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/javaApp">Java App</router-link> |
-      <router-link to="/usuarios">Usuarios</router-link>
+      <router-link to="/usuarios">Usuarios</router-link> |
+      <router-link to="/login">Log In</router-link> |
+      <router-link to="/recursos">Recursos</router-link> |
+      <router-link to="/comentarios">Comentarios</router-link> |
+      <router-link to="/consultas">Consultas</router-link> |
+      
     </div>
     <router-view/>
   </div>

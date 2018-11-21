@@ -1,29 +1,31 @@
 <template>
 <section>
     <form action="#" method="post">
-    <label for="name">Número de cuenta:</label>
-    <input type="text" name="cuenta" v-model="cuenta" >
+    <label for="name">Usuario:</label>
+    <input type="text" name="usuario" v-model="usuario" >
     <br>
-    <label for="name">Contraseña:</label>
-    <input type="password" name="password" v-model="password" >
+    <label for="name">Recurso:</label>
+    <input type="text" name="recurso" v-model="recurso" >
     <br>
-    <button type="submit" @click.prevent="sendData">Entrar</button>
+    <button type="submit" @click.prevent="sendData">Consultar</button>
     </form>
+    <br>
     <div v-if="success">
-        <p>Bienvenido</p>
+        <p>Succ</p>
         <router-link to="/">Home</router-link>
     </div>
+
 </section>
 </template>
 <script>
 import axios from "axios";
 
 export default {
-    name: "login",
+    name: "consultas",
     data(){
         return{
-            cuenta:null,
-            password:null,
+            usuario:null,
+            recurso:null,
             success: false,
             error: false
         };
@@ -33,19 +35,19 @@ export default {
             console.log("here");
             axios({
                 method: "POST",
-                url: "https://java-rest-server.herokuapp.com/login/",
+                url: "https://java-rest-server.herokuapp.com/consultas/",
                 data:{
-                    cuenta: this.cuenta,
-                    password: this.password
+                    usuario: this.usuario,
+                    recurso: this.recurso
                 },
             headers: {"content-type": "application/json"}    
             }).then(
                 result =>{
                     if(result.data.id>0){
                         this.success=true;
-                        this.cuenta=null;
-                        this.password=null;
-                       
+                        this.usuario=null;
+                        this.recurso=null;
+                        
                     }
                 },
                 error=> {
