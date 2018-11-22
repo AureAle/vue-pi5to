@@ -4,6 +4,10 @@ import { userInfo } from 'os';
 import Home from './views/Home.vue';
 import JavaApp from './views/JavaApp.vue';
 import Usuarios from './views/Usuarios.vue';
+import Login from './views/Login.vue';
+import agregarRecurso from './views/agregarRecurso.vue';
+import Comentarios from './views/Comentarios.vue';
+import Consultas from './views/Consultas.vue';
 
 Vue.use(Router);
 
@@ -32,5 +36,25 @@ export default new Router({
       name: 'usuarios',
       component: Usuarios,
     },
+    {
+      path:'/login',
+      name:'login',
+      component: Login,
+    },
+    {
+      path:'/recursos',
+      name:'recursos',
+      component: agregarRecurso,
+    },
+    {
+      path:'/comentarios',
+      name:'comentarios',
+      component: Comentarios,
+    },
+    {
+      path:'/consultas',
+      name:'consultas',
+      component: Consultas,
+    }
   ],
 });

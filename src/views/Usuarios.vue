@@ -79,7 +79,7 @@ export default {
             this.type = null;
           }
         },
-        error => {
+         error => {
           this.error = true;
         }
       );
