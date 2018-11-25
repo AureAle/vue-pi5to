@@ -9,6 +9,8 @@
       <router-link to="/recursos">Recursos</router-link> |
       <router-link to="/comentarios">Comentarios</router-link> |
       <router-link to="/consultas">Consultas</router-link> |
+      <router-link to="/verUsuarios">Ver Usuarios</router-link> |
+      
       
     </div>
     <router-view/>
