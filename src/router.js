@@ -9,6 +9,7 @@ import verUsuarios from './views/verUsuarios.vue';
 import verRecursos from './views/verRecursos.vue';
 import verRepos from './views/verRepos.vue';
 import Profile from './views/Profile.vue';
+import Buscar from './views/Buscar.vue';
 
 Vue.use(Router);
 
@@ -26,7 +27,7 @@ export default new Router({
     },
     {
       path: '/usuarios/:cuenta',
-      name: 'perfil',
+      name: 'profile',
       component: Profile,
     },
     {
@@ -58,6 +59,11 @@ export default new Router({
       path: '/verRepos',
       name: 'verRepos',
       component: verRepos,
+    },
+    {
+      path: '/buscar',
+      name: 'buscar',
+      component: Buscar,
     },
   ],
 });

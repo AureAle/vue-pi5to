@@ -20,7 +20,7 @@
         <input type="text" name="etiquetas" v-model="etiquetas" >
         <br>
         <label for="name">Descripción:</label>
-        <input type="text" name="descripcion" v-model="descripcion" > 
+        <input type="text" name="descripcion" v-model="descripcion" >
         <br>
         <button type="submit" @click.prevent="sendData">Registrar Recusro</button>
     </form>
@@ -29,14 +29,14 @@
       <p>Recurso registrado correctamente!</p>
       <router-link to="/">Home</router-link>
     </div>
-</section> 
+</section>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "agregarRecurso",
+  name: 'agregarRecurso',
   data() {
     return {
       categoria: null,
@@ -47,15 +47,15 @@ export default {
       etiquetas: null,
       descripcion: null,
       success: false,
-      error: false
+      error: false,
     };
   },
   methods: {
     sendData() {
-      console.log("here");
+      console.log('here');
       axios({
-        method: "POST",
-        url: "https://java-rest-server.herokuapp.com/recursos/",
+        method: 'POST',
+        url: 'https://java-rest-server.herokuapp.com/recursos/',
         data: {
           categoria: this.categoria,
           formato: this.formato,
@@ -63,11 +63,11 @@ export default {
           autor: this.autor,
           edicion: this.edicion,
           etiquetas: this.etiquetas,
-          descripcion: this.descripcion
+          descripcion: this.descripcion,
         },
-        headers: { "content-type": "application/json" }
+        headers: { 'content-type': 'application/json' },
       }).then(
-        result => {
+        (result) => {
           if (result.data.id > 0) {
             this.success = true;
             this.categoria = null;
@@ -79,12 +79,12 @@ export default {
             this.descripcion = null;
           }
         },
-        error => {
+        (error) => {
           this.error = true;
-        }
+        },
       );
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

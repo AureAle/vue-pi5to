@@ -18,49 +18,45 @@
 </section>
 </template>
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-    name: "consultas",
-    data(){
-        return{
-            usuario:null,
-            recurso:null,
-            success: false,
-            error: false
-        };
+  name: 'consultas',
+  data() {
+    return {
+      usuario: null,
+      recurso: null,
+      success: false,
+      error: false,
+    };
+  },
+  methods: {
+    sendData() {
+      console.log('here');
+      axios({
+        method: 'POST',
+        url: 'https://java-rest-server.herokuapp.com/consultas/',
+        data: {
+          usuario: this.usuario,
+          recurso: this.recurso,
+        },
+        headers: { 'content-type': 'application/json' },
+      }).then(
+        (result) => {
+          if (result.data.id > 0) {
+            this.success = true;
+            this.usuario = null;
+            this.recurso = null;
+          }
+        },
+        (error) => {
+          this.error = true;
+        },
+      );
     },
-    methods:{
-        sendData(){
-            console.log("here");
-            axios({
-                method: "POST",
-                url: "https://java-rest-server.herokuapp.com/consultas/",
-                data:{
-                    usuario: this.usuario,
-                    recurso: this.recurso
-                },
-            headers: {"content-type": "application/json"}    
-            }).then(
-                result =>{
-                    if(result.data.id>0){
-                        this.success=true;
-                        this.usuario=null;
-                        this.recurso=null;
-                        
-                    }
-                },
-                error=> {
-                    this.error=true;
-                }
-            );
-        }
-    }
+  },
 };
 </script>
 <style>
 
 </style>
-
-
-
