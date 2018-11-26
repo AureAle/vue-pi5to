@@ -4,22 +4,22 @@
       <label for="name">Nombre:</label>
       <input type="text" name="name" v-model="name" >
       <br>
-      <label for="name">Career:</label>
+      <label for="name">Carrera:</label>
       <input type="text" name="career" v-model="career" >
       <br>
-      <label for="name">Email:</label>
+      <label for="name">E-mail:</label>
       <input type="text" name="email" v-model="email" >
       <br>
-      <label for="name">User:</label>
+      <label for="name">Usuario:</label>
       <input type="text" name="user" v-model="user" >
       <br>
-      <label for="name">Password:</label>
+      <label for="name">Contraseña:</label>
       <input type="password" name="password" v-model="password" >
       <br>
       <label for="name">Cuenta:</label>
       <input type="number" name="cuenta" v-model="cuenta" >
       <br>
-      <label for="name">Type:</label>
+      <label for="name">Tipo:</label>
       <input type="text" name="type" v-model="type" >
       <br>
       <button type="submit" @click.prevent="sendData">Registrar</button>
@@ -38,6 +38,7 @@ import axios from "axios";
 export default {
   name: "usuarios",
   data() {
+   
     return {
       name: null,
       career: null,
@@ -48,6 +49,7 @@ export default {
       type: null,
       success: false,
       error: false
+      
     };
   },
   methods: {
@@ -83,7 +85,8 @@ export default {
           this.error = true;
         }
       );
-    }
+    },
+
   }
 };
 </script>
