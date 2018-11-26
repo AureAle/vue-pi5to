@@ -1,13 +1,17 @@
 <template>
 <section>
     <form action="#" method="post">
+      <div class="form-group">
         <label for="name">Número de cuenta:</label>
         <input type="text" name="cuenta" v-model="cuenta" >
-        <br>
+      </div>
+      <div class="form-group">
         <label for="name">Contraseña:</label>
         <input type="password" name="password" v-model="password" >
-        <br>
+      </div>
+      <div class="form-group">
         <button type="submit" @click.prevent="sendData">Entrar</button>
+      </div>
     </form>
     <div v-if="success">
         <p>Bienvenido {{user.nombre}}</p>
@@ -60,7 +64,8 @@ export default {
   }
 };
 </script>
-<style>
+
+<style scoped>
 </style>
 
 

@@ -3,14 +3,12 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/usuarios">Usuarios</router-link> |
-      <router-link to="/login">Log In</router-link> |
       <router-link to="/recursos">Recursos</router-link> |
       <router-link to="/comentarios">Comentarios</router-link> |
       <router-link to="/consultas">Consultas</router-link> |
       <router-link to="/verUsuarios">Ver Usuarios</router-link> |
       <router-link to="/verRecursos">Ver recursos</router-link> |
-      <router-link to="/verRepos">Ver repositorios</router-link> |
-      
+      <router-link to="/verRepos">Ver repositorios</router-link> |  
     </div>
     <router-view/>
   </div>
@@ -46,6 +44,12 @@ export default {
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+.form-group {
+  margin: 1rem;
+  * {
+    margin: 0.5rem;
   }
 }
 </style>
