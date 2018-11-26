@@ -1,5 +1,17 @@
 <template>
   <section>
+    <div v-if="usuarios">
+      <p>Usuarios registrados: <strong>{{usuarios.length}}</strong></p>
+      <div v-for="user in usuarios" :key="user.id">
+        <p>Cuenta: {{user.cuenta}}</p>
+        <p>Nombre: {{user.nombre}}</p>
+        <router-link v-bind:to="'/usuarios/'+user.cuenta"> Profile </router-link>
+        <hr>
+      </div>
+      <br>
+      <hr>
+      <br>
+    </div>
     <form action="#" method="post">
       <label for="name">Nombre:</label>
       <input type="text" name="name" v-model="name" >
@@ -27,7 +39,7 @@
     <br>
     <div v-if="success">
       <p>Usuario registrado correctamente!</p>
-      <router-link to="/">Home</router-link>
+      <router-link to="/">Login</router-link>
     </div>
   </section>
 </template>
@@ -38,7 +50,6 @@ import axios from "axios";
 export default {
   name: "usuarios",
   data() {
-   
     return {
       name: null,
       career: null,
@@ -48,9 +59,18 @@ export default {
       cuenta: null,
       type: null,
       success: false,
-      error: false
-      
+      error: false,
+      usuarios: null
     };
+  },
+  mounted() {
+    axios({
+      method: "GET",
+      url: "https://java-rest-server.herokuapp.com/usuarios/",
+      headers: { "content-type": "application/json" }
+    }).then(response => {
+      this.usuarios = response.data;
+    });
   },
   methods: {
     sendData() {
@@ -81,12 +101,11 @@ export default {
             this.type = null;
           }
         },
-         error => {
+        error => {
           this.error = true;
         }
       );
-    },
-
+    }
   }
 };
 </script>

@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "npx eslint --fix ."
+    "fix": "npx eslint --fix .",
+    "dev": "npm run fix && npm run serve"
   },
   "dependencies": {
     "axios": "^0.18.0",

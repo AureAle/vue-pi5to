@@ -2,8 +2,6 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/javaApp">Java App</router-link> |
       <router-link to="/usuarios">Usuarios</router-link> |
       <router-link to="/login">Log In</router-link> |
       <router-link to="/recursos">Recursos</router-link> |
@@ -17,6 +15,20 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import { mapState, mapMutations } from "vuex";
+
+export default {
+  name: "root",
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState(["user"])
+  }
+};
+</script>
 
 <style lang="scss">
 #app {

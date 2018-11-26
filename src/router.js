@@ -1,15 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import JavaApp from './views/JavaApp.vue';
 import Usuarios from './views/Usuarios.vue';
 import Login from './views/Login.vue';
-import agregarRecurso from './views/agregarRecurso.vue';
+import Recurso from './views/Recurso.vue';
 import Comentarios from './views/Comentarios.vue';
 import Consultas from './views/Consultas.vue';
 import verUsuarios from './views/verUsuarios.vue';
 import verRecursos from './views/verRecursos.vue';
 import verRepos from './views/verRepos.vue';
+import Profile from './views/Profile.vue';
 
 Vue.use(Router);
 
@@ -18,20 +17,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
-    },
-    {
-      path: '/javaApp',
-      name: 'javaApp',
-      component: JavaApp,
+      component: Login,
     },
     {
       path: '/usuarios',
@@ -39,14 +25,14 @@ export default new Router({
       component: Usuarios,
     },
     {
-      path: '/login',
-      name: 'login',
-      component: Login,
+      path: '/usuarios/:cuenta',
+      name: 'perfil',
+      component: Profile,
     },
     {
       path: '/recursos',
       name: 'recursos',
-      component: agregarRecurso,
+      component: Recurso,
     },
     {
       path: '/comentarios',
