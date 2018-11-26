@@ -13,12 +13,12 @@
 	<th>Tipo</th>      
 </thead>
 	<tr v-for="data in users" :key="data.cuenta" > 
-		<td>{{data.name}}</td>
-		<td>{{data.career}}</td>
-		<td>{{data.email}}</td>
-		<td>{{data.user}}</td>
+		<td>{{data.nombre}}</td>
+		<td>{{data.carrera}}</td>
+		<td>{{data.correo}}</td>
+		<td>{{data.usuario}}</td>
 		<td>{{data.cuenta}}</td>
-		<td>{{data.type}}</td>   
+		<td>{{data.tipo}}</td>   
 	</tr>
 
 </table>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default{
 
 	data() {
@@ -35,7 +36,7 @@ export default{
     },
     methods: {
     getUsers(){
-        axios({ /*dice un error que axios no está declarado, ésta no funciona la de usuarios sí*/
+        axios({ 
         method: "GET",
         url: "https://java-rest-server.herokuapp.com/usuarios/",
         data:{},

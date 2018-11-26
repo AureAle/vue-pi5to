@@ -10,7 +10,8 @@
       <router-link to="/comentarios">Comentarios</router-link> |
       <router-link to="/consultas">Consultas</router-link> |
       <router-link to="/verUsuarios">Ver Usuarios</router-link> |
-      
+      <router-link to="/verRecursos">Ver recursos</router-link> |
+      <router-link to="/verRepos">Ver repositorios</router-link> |
       
     </div>
     <router-view/>

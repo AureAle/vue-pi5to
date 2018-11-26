@@ -9,6 +9,8 @@ import agregarRecurso from './views/agregarRecurso.vue';
 import Comentarios from './views/Comentarios.vue';
 import Consultas from './views/Consultas.vue';
 import verUsuarios from './views/verUsuarios.vue';
+import verRecursos from './views/verRecursos.vue';
+import verRepos from './views/verRepos.vue';
 
 Vue.use(Router);
 
@@ -61,6 +63,16 @@ export default new Router({
       path:'/verUsuarios',
       name:'verUsuarios',
       component: verUsuarios,
+    },
+    {
+      path:'/verRecursos',
+      name:'verRecursos',
+      component: verRecursos,
+    },
+    {
+      path:'/verRepos',
+      name:'verRepos',
+      component: verRepos,
     }
   ],
 });
