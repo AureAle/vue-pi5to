@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { userInfo } from 'os';
 import Home from './views/Home.vue';
 import JavaApp from './views/JavaApp.vue';
 import Usuarios from './views/Usuarios.vue';
@@ -40,39 +39,39 @@ export default new Router({
       component: Usuarios,
     },
     {
-      path:'/login',
-      name:'login',
+      path: '/login',
+      name: 'login',
       component: Login,
     },
     {
-      path:'/recursos',
-      name:'recursos',
+      path: '/recursos',
+      name: 'recursos',
       component: agregarRecurso,
     },
     {
-      path:'/comentarios',
-      name:'comentarios',
+      path: '/comentarios',
+      name: 'comentarios',
       component: Comentarios,
     },
     {
-      path:'/consultas',
-      name:'consultas',
+      path: '/consultas',
+      name: 'consultas',
       component: Consultas,
     },
     {
-      path:'/verUsuarios',
-      name:'verUsuarios',
+      path: '/verUsuarios',
+      name: 'verUsuarios',
       component: verUsuarios,
     },
     {
-      path:'/verRecursos',
-      name:'verRecursos',
+      path: '/verRecursos',
+      name: 'verRecursos',
       component: verRecursos,
     },
     {
-      path:'/verRepos',
-      name:'verRepos',
+      path: '/verRepos',
+      name: 'verRepos',
       component: verRepos,
-    }
+    },
   ],
 });
