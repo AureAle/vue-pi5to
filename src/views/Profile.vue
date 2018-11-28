@@ -3,7 +3,7 @@
     <h1>Nombre: {{user.nombre}}</h1>
     <h3>Cuenta: {{user.cuenta}}</h3>
     <h5>Tipo: {{user.tipo}}</h5>
-    <button @click="logout">Logout</button>
+    <button @click="logout">Log Out</button>
   </section>
 </template>
 

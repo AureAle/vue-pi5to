@@ -1,28 +1,31 @@
 <template>
 <section>
+  <label id="title">Registra un Recurso</label>
     <form action ="#" method="post">
-        <label for="name">Categoria:</label>
-        <input type="text" name="categoria" v-model="categoria" >
-        <br>
-        <label for="name">Formato:</label>
-        <input type="text" name="formato" v-model="formato" >
-        <br>
-        <label for="name">Nombre:</label>
-        <input type="text" name="nombre" v-model="nombre" >
-        <br>
-        <label for="name">Autor:</label>
-        <input type="text" name="autor" v-model="autor" >
-        <br>
-        <label for="name">Edición:</label>
-        <input type="text" name="edición" v-model="edicion" >
-        <br>
-        <label for="name">Etiquetas:</label>
-        <input type="text" name="etiquetas" v-model="etiquetas" >
-        <br>
-        <label for="name">Descripción:</label>
-        <input type="text" name="descripcion" v-model="descripcion" >
-        <br>
+    <form id="recurso" action="#" method="post">      
+        <!--<label for="name">Categoria:</label>-->
+        <input type="text" name="categoria" placeholder="Categoría" v-model="categoria" >
+        
+        <!--<label for="name">Formato:</label>-->
+        <input type="text" name="formato" placeholder="Formato" v-model="formato" >
+        
+        <!--<label for="name">Nombre:</label>-->
+        <input type="text" name="nombre" placeholder="Nombre" v-model="nombre" >
+        
+        <!--<label for="name">Autor:</label>-->
+        <input type="text" name="autor" placeholder="Autor" v-model="autor" >
+      
+        <!--<label for="name">Edición:</label>-->
+        <input type="text" name="edición" placeholder="Edición" v-model="edicion" >
+        
+        <!--<label for="name">Etiquetas:</label>-->
+        <input type="text" name="etiquetas" placeholder="Etiquetas" v-model="etiquetas" >
+        
+        <!--<label for="name">Descripción:</label>-->
+        <input type="text" name="descripcion" placeholder="Descripción" v-model="descripcion" >
+        
         <button type="submit" @click.prevent="sendData">Registrar Recusro</button>
+    </form>
     </form>
     <br>
     <div v-if="success">
@@ -87,5 +90,29 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped >
+#title{
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 20px;
+  color: black;
+}
+#recurso{
+  background-color: #dfd9d9;
+  padding: 19px;
+  display: flex;
+  box-sizing: border-box;
+  width: 300px;
+  border-radius: 12px;
+  flex-direction: column;
+  margin-top: 1rem;
+  align-content: center;
+  margin: auto;
+  margin-top:20px;
+  border: 1px;
+  max-width: 450px;
+  height: auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
 </style>

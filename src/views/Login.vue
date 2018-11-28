@@ -1,6 +1,7 @@
 <template>
   <section>
-    <form action="#" method="post">
+    <label id="title" for="name">Log In</label>
+    <form id="login" action="#" method="post">
       <div class="form-group">
         <label for="name">Número de cuenta:</label>
         <input type="text" name="cuenta" v-model="cuenta">
@@ -69,4 +70,34 @@ export default {
 </script>
 
 <style scoped>
+
+#login{
+    padding: 19px;
+    display: flex;
+    box-sizing: border-box;
+    width: 300px;
+    border-radius: 12px;
+    background-color: rgb(223, 217, 217);
+    flex-direction: column;
+    margin-top: 1rem;
+    align-content: center;
+    margin: auto;
+    margin-top:20px;
+    border: 1px;
+    max-width: 450px;
+    height: auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+#title{
+  font-weight: bold;
+}
+section{
+  padding-top: 40px;
+  font-family: Arial;
+  font-size: 20px;
+  color: black;
+}
+
 </style>

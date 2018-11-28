@@ -1,27 +1,26 @@
 <template>
   <section>
-    <form action="#" method="post">
-      <label for="name">Nombre:</label>
-      <input type="text" name="name" v-model="name">
-      <br>
-      <label for="name">Carrera:</label>
-      <input type="text" name="career" v-model="career">
-      <br>
-      <label for="name">E-mail:</label>
-      <input type="text" name="email" v-model="email">
-      <br>
-      <label for="name">Usuario:</label>
-      <input type="text" name="user" v-model="user">
-      <br>
-      <label for="name">Contraseña:</label>
-      <input type="password" name="password" v-model="password">
-      <br>
-      <label for="name">Cuenta:</label>
-      <input type="number" name="cuenta" v-model="cuenta">
-      <br>
+    <label id="title">Registrarse</label>
+    <form id="login" action="#" method="post">
+      <input type="text"  name="name" placeholder="Nombre" v-model="name">
+      
+      <input type="text" name="career" placeholder="Carrera" v-model="career">
+      
+      <!--<label for="name">E-mail:</label>-->
+      <input type="text" name="email" placeholder="E-mail" v-model="email">
+      
+      <!--<label for="name">Usuario:</label>-->
+      <input type="text" name="user" placeholder="Usuario" v-model="user">
+      
+      <!--<label for="name">Contraseña:</label>-->
+      <input type="password" name="password" placeholder="Contraseña" v-model="password">
+      
+      <!--<label for="name">Número de Cuenta:</label>-->
+      <input type="text" name="cuenta" placeholder="Número de cuenta" v-model="cuenta">
+      
       <label for="name">Tipo:</label>
-      <input type="text" name="type" v-model="type">
-      <br>
+      <input type="text" name="type" placeholder="estudiante/bibliotecario" v-model="type">
+      
       <button type="submit" @click.prevent="sendData">Registrar</button>
     </form>
     <br>
@@ -88,5 +87,36 @@ export default {
 };
 </script>
 
-<style>
+<style scope >
+#title{
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 20px;
+  color: black;
+}
+
+#login{
+    padding: 19px;
+    display: flex;
+    box-sizing: border-box;
+    width: 300px;
+    border-radius: 12px;
+    background-color: #dfd9d9;
+    flex-direction: column;
+    margin-top: 1rem;
+    align-content: center;
+    margin: auto;
+    margin-top:20px;
+    border: 1px;
+    max-width: 450px;
+    height: auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+section{
+  padding-top: 18px;
+  font-family: Arial;
+  font-size: 16px;
+  color: black;
+}
 </style>

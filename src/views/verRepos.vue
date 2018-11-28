@@ -3,7 +3,7 @@
         <h1>Repos</h1>
     <button type="submit" @click.prevent="getRepos">Mostrar</button>
 
-<table border="1">
+<table id="repos" border="1">
 <thead>
 	<th>Id</th>
 	<th>Nombre</th>
@@ -53,3 +53,28 @@ export default {
 };
 
 </script>
+<style scoped>
+#repos{
+   border-collapse: collapse;
+    width: 100%;
+ }
+
+ #repos td, #repos th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#repos tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+#repos tr:hover {
+  background-color: #ddd;
+}
+#repos th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #c4c4fa;
+    color: white;
+}
+</style>
+

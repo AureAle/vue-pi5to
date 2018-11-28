@@ -1,7 +1,8 @@
 <template>
   <section>
-    <form action="#" method="post">
-      <select name="campo" id="campo" v-model="campo">
+    <form id="buscador" action="#" method="post">
+      <label for="name">Buscar por:</label>
+      <select name="campo" id="campo" v-model="campo">  
         <option value></option>
         <option value="categoria">categoria</option>
         <option value="formato">formato</option>
@@ -9,11 +10,11 @@
         <option value="autor">autor</option>
         <option value="edición">edición</option>
         <option value="etiquetas">etiquetas</option>
-        <option value="descripcion">descripcion</option>
+        <option value="descripcion">descripción</option>
       </select>
       <input type="text" name="valor" id="valor" v-model="valor">
       <br>
-      <button type="submit" @click.prevent="sendData">Buscar por</button>
+      <button type="submit" @click.prevent="sendData">Buscar</button>
     </form>
     <br>
     <div v-if="success">
@@ -72,5 +73,24 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped >
+#buscador{
+  background-color: #dfd9d9;
+  padding: 19px;
+  display: flex;
+  box-sizing: border-box;
+  width: 300px;
+  border-radius: 12px;
+  flex-direction: column;
+  margin-top: 1rem;
+  align-content: center;
+  margin: auto;
+  margin-top:20px;
+  border: 1px;
+  max-width: 450px;
+  height: auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
 </style>

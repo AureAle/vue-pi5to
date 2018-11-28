@@ -3,7 +3,7 @@
         <h1>Recursos</h1>
     <button type="submit" @click.prevent="getRecursos">Mostrar</button>
 
-<table border="1">
+<table id="recursos" border="1">
 <thead>
 	<th>Likes</th>
 	<th>Consultas</th>
@@ -63,3 +63,28 @@ export default {
 };
 
 </script>
+<style scoped>
+ #recursos{
+   border-collapse: collapse;
+    width: 100%;
+ }
+
+ #recursos td, #recursos th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#recursos tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+#recursos tr:hover {
+  background-color: #ddd;
+}
+#recursos th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #c4c4fa;
+    color: white;
+}
+</style>
+
